@@ -12,26 +12,48 @@ class ViewController: UIViewController {
     @IBOutlet var timerCount: UILabel!
     var timeCount = 0
     var terminateTimer = false
-    var timer: Timer?
+    var locationTimer: Timer?
+    var speechTimer: Timer?
+    var timeCountHours: String = ""
+    var timeCountMinutes: String = ""
+    var timeCountSeconds: String = ""
+    var timeCountDisplay: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(masterLoop), userInfo: nil, repeats: true)
+        locationTimer = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(masterLoop), userInfo: nil, repeats: true)
+        speechTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(speechTracker), userInfo: nil, repeats: true)
 
-        timer!.tolerance = 0.1
+        locationTimer!.tolerance = 0.1
     }
     
-    @IBAction func StartStopButton() {
-        terminateTimer = true
+    @IBAction func RunStopButton() {
+        locationTimer!.invalidate()
+        speechTimer!.invalidate()
+    }
+    
+    @objc func speechTracker() {
+        
     }
     
     @objc func masterLoop() {
-        timerCount.text = String(timeCount)
-        timeCount+=1
-        if terminateTimer{
-            timer!.invalidate()
+        timeCountHours = String(timeCount/3600) + ":"
+        timeCountMinutes = String((timeCount%3600)/60) + ":"
+        timeCountSeconds = String(timeCount%60)
+        if timeCountHours.count < 3{
+            timeCountHours = "0" + timeCountHours
         }
+        if timeCountMinutes.count < 3{
+            timeCountMinutes = "0" + timeCountMinutes
+        }
+        if timeCountSeconds.count < 2{
+            timeCountSeconds = "0" + timeCountSeconds
+        }
+        timeCountDisplay = timeCountHours+timeCountMinutes+timeCountSeconds
+        timerCount.text = timeCountDisplay
+        timeCount+=1
+        
     }
 
 

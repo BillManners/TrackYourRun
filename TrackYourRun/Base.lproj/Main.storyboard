@@ -35,7 +35,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="timerCount" destination="8bC-Xf-vdC" id="rbC-hZ-mcx"/>
+                        <outlet property="timerCount" destination="lb5-pI-dBb" id="vcW-JC-FaM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
