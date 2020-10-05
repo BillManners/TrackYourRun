@@ -12,6 +12,9 @@ class speedDistanceTracking{
     var distance = 0
     var averageSpeed = 0
     
+    func locationUpdate(location: Location{
+        
+    }
     
     
 }
