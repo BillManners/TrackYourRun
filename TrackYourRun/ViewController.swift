@@ -34,6 +34,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func RunStopButton() {
         locationTimer!.invalidate()
         speechTimer!.invalidate()
+        locationManager.start
     }
     
     
@@ -41,6 +42,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {}
     
     @objc func masterLoop() {
         timeCountHours = String(timeCount/3600) + ":"
