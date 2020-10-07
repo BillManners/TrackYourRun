@@ -34,8 +34,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
     }
     
-    private func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let firstLocation = locations.first {}
+    internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let firstLocation = locations.first {
+            print(locations)
+        }
         
     }
     
@@ -53,9 +55,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @objc func speechTracker() {
         
     }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {}
-    
+        
     @objc func masterLoop() {
         if TimerPaused{
             return
@@ -75,7 +75,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         timeCountDisplay = timeCountHours+timeCountMinutes+timeCountSeconds
         timerCount.text = timeCountDisplay
         timeCount+=1
-        //currentLocation.text = locationManager.requestLocation()
+        currentLocation.text = "locationManager.curree()"
         
         
     }

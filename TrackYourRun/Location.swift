@@ -7,12 +7,11 @@
 //
 
 import Foundation
+import CoreLocation
 
 class Location{
-    init(latitude: Double, longitude: Double, timeOnRun: Int) {
-        let latitude = latitude
-        let longitude = longitude
-        let timeElapsed = timeOnRun
+    init(coordinate: CLLocationCoordinate2D, altitude: CLLocationDistancetimeOnRun, timestamp: Date { get }) {
+        
         let time = Date.init()
     }
 }

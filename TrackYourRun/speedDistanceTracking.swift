@@ -7,14 +7,20 @@
 //
 
 import Foundation
+import CoreLocation
 
 class speedDistanceTracking{
     var distance = 0
     var averageSpeed = 0
+    var previousLocation = [Location].self
     
-    //func locationUpdate(location: Location{
+    func locationUpdate(location: CLLocation){
         
-    //}
+    }
+    
+    func CLLocationToLocation(location: CLLocation){
+        
+    }
     
     
 }

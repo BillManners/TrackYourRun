@@ -42,6 +42,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="currentLocation" destination="9G8-mE-3Gb" id="TpT-4i-cxA"/>
                         <outlet property="timerCount" destination="lb5-pI-dBb" id="vcW-JC-FaM"/>
                     </connections>
                 </viewController>
