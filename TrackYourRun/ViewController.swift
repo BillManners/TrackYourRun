@@ -15,6 +15,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var terminateTimer = false
     var locationTimer: Timer?
     var speechTimer: Timer?
+    var TimerPaused =  true
     var timeCountHours: String = ""
     var timeCountMinutes: String = ""
     var timeCountSeconds: String = ""
@@ -24,17 +25,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        locationTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(masterLoop), userInfo: nil, repeats: true)
-        speechTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(speechTracker), userInfo: nil, repeats: true)
         locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
-        locationTimer!.tolerance = 0.1
+        speechTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(masterLoop), userInfo: nil, repeats: true)
+        locationTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(masterLoop), userInfo: nil, repeats: true)
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+    }
+    
+    private func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let firstLocation = locations.first {}
+        
     }
     
     @IBAction func RunStopButton() {
-        locationTimer!.invalidate()
-        speechTimer!.invalidate()
-        locationManager.start
+        if TimerPaused{
+            TimerPaused = false
+        } else {
+            TimerPaused = true
+        }
+
+        
     }
     
     
@@ -45,6 +57,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {}
     
     @objc func masterLoop() {
+        if TimerPaused{
+            return
+        }
         timeCountHours = String(timeCount/3600) + ":"
         timeCountMinutes = String((timeCount%3600)/60) + ":"
         timeCountSeconds = String(timeCount%60)
@@ -60,7 +75,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         timeCountDisplay = timeCountHours+timeCountMinutes+timeCountSeconds
         timerCount.text = timeCountDisplay
         timeCount+=1
-        currentLocation.text = locationManager.requestLocation()
+        //currentLocation.text = locationManager.requestLocation()
         
         
     }
