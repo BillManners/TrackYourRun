@@ -20,26 +20,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var timeCountMinutes: String = ""
     var timeCountSeconds: String = ""
     var timeCountDisplay: String = ""
+    var averagePace: Double = 0
+    var currentPace: Double = 0
+    var totalDistance: Double = 0
+    var distanceSinceLastPoint: CLLocationDistance?
     let locationManager = CLLocationManager()
+    let speedAndDistance = speedDistanceTracking()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         locationManager.requestAlwaysAuthorization()
-        locationManager.delegate = self
         speechTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(masterLoop), userInfo: nil, repeats: true)
         locationTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(masterLoop), userInfo: nil, repeats: true)
-        locationManager.delegate = self
+        
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
     }
     
-    internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let firstLocation = locations.first {
-            print(locations)
-        }
-        
-    }
+    
     
     @IBAction func RunStopButton() {
         if TimerPaused{
@@ -51,6 +51,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let lastLocation = locations.last{
+            (currentPace,averagePace,totalDistance) = speedAndDistance.locationUpdate(location: lastLocation)
+        }
+    }
+    
+
     
     @objc func speechTracker() {
         
@@ -75,7 +86,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         timeCountDisplay = timeCountHours+timeCountMinutes+timeCountSeconds
         timerCount.text = timeCountDisplay
         timeCount+=1
-        currentLocation.text = "locationManager.curree()"
+        locationManager.requestLocation()
         
         
     }

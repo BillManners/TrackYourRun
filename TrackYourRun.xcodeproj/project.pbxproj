@@ -16,7 +16,6 @@
 		B61271F42521E3F900FCF9D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B61271F22521E3F900FCF9D4 /* LaunchScreen.storyboard */; };
 		B61271FF2521E3F900FCF9D4 /* TrackYourRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61271FE2521E3F900FCF9D4 /* TrackYourRunTests.swift */; };
 		B612720A2521E3F900FCF9D4 /* TrackYourRunUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61272092521E3F900FCF9D4 /* TrackYourRunUITests.swift */; };
-		B648DF1C252B185E00A007EE /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = B648DF1B252B185E00A007EE /* Location.swift */; };
 		B65A00E4252877F000E08916 /* speedDistanceTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A00E3252877F000E08916 /* speedDistanceTracking.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +52,6 @@
 		B61272052521E3F900FCF9D4 /* TrackYourRunUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackYourRunUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B61272092521E3F900FCF9D4 /* TrackYourRunUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackYourRunUITests.swift; sourceTree = "<group>"; };
 		B612720B2521E3F900FCF9D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B648DF1B252B185E00A007EE /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		B65A00E3252877F000E08916 /* speedDistanceTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speedDistanceTracking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,7 +112,6 @@
 				B61271F52521E3F900FCF9D4 /* Info.plist */,
 				B61271ED2521E3F600FCF9D4 /* TrackYourRun.xcdatamodeld */,
 				B65A00E3252877F000E08916 /* speedDistanceTracking.swift */,
-				B648DF1B252B185E00A007EE /* Location.swift */,
 			);
 			path = TrackYourRun;
 			sourceTree = "<group>";
@@ -269,7 +266,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B61271E92521E3F600FCF9D4 /* ViewController.swift in Sources */,
-				B648DF1C252B185E00A007EE /* Location.swift in Sources */,
 				B65A00E4252877F000E08916 /* speedDistanceTracking.swift in Sources */,
 				B61271E52521E3F600FCF9D4 /* AppDelegate.swift in Sources */,
 				B61271EF2521E3F600FCF9D4 /* TrackYourRun.xcdatamodeld in Sources */,
