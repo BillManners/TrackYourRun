@@ -44,7 +44,7 @@ class speedDistanceTracking{
         averageSpeed = ((runTime-timeSinceLastPoint)*averageSpeed+distanceSinceLastPoint)/(runTime)
         previousDifferences.append(distanceSinceLastPoint)
         var currentAverageTotal = 0.00
-        if previousDifferences.count >= 5{
+        if previousLocationTimes.count >= 5{
             for i in 1...5 {
                 currentAverageTotal += previousDifferences[previousDifferences.endIndex-i]
             

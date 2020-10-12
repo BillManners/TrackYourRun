@@ -17,6 +17,8 @@
 		B61271FF2521E3F900FCF9D4 /* TrackYourRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61271FE2521E3F900FCF9D4 /* TrackYourRunTests.swift */; };
 		B612720A2521E3F900FCF9D4 /* TrackYourRunUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61272092521E3F900FCF9D4 /* TrackYourRunUITests.swift */; };
 		B65A00E4252877F000E08916 /* speedDistanceTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A00E3252877F000E08916 /* speedDistanceTracking.swift */; };
+		B6C4A73225345DA900C77638 /* virtualProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C4A73125345DA900C77638 /* virtualProgress.swift */; };
+		B6C4A73425345EAF00C77638 /* runSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C4A73325345EAF00C77638 /* runSegment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		B61272092521E3F900FCF9D4 /* TrackYourRunUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackYourRunUITests.swift; sourceTree = "<group>"; };
 		B612720B2521E3F900FCF9D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B65A00E3252877F000E08916 /* speedDistanceTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speedDistanceTracking.swift; sourceTree = "<group>"; };
+		B6C4A73125345DA900C77638 /* virtualProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = virtualProgress.swift; sourceTree = "<group>"; };
+		B6C4A73325345EAF00C77638 /* runSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = runSegment.swift; sourceTree = "<group>"; };
 		B6EF2F5B2533DC8E00BDBA56 /* Afternoon_run_.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Afternoon_run_.gpx; path = ../../Downloads/Afternoon_run_.gpx; sourceTree = "<group>"; };
 		B6EF2F5C2533E30000BDBA56 /* run.gpx */ = {isa = PBXFileReference; lastKnownFileType = file; name = run.gpx; path = ../../Documents/run.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +120,8 @@
 				B61271F52521E3F900FCF9D4 /* Info.plist */,
 				B61271ED2521E3F600FCF9D4 /* TrackYourRun.xcdatamodeld */,
 				B65A00E3252877F000E08916 /* speedDistanceTracking.swift */,
+				B6C4A73125345DA900C77638 /* virtualProgress.swift */,
+				B6C4A73325345EAF00C77638 /* runSegment.swift */,
 			);
 			path = TrackYourRun;
 			sourceTree = "<group>";
@@ -271,8 +277,10 @@
 			files = (
 				B61271E92521E3F600FCF9D4 /* ViewController.swift in Sources */,
 				B65A00E4252877F000E08916 /* speedDistanceTracking.swift in Sources */,
+				B6C4A73425345EAF00C77638 /* runSegment.swift in Sources */,
 				B61271E52521E3F600FCF9D4 /* AppDelegate.swift in Sources */,
 				B61271EF2521E3F600FCF9D4 /* TrackYourRun.xcdatamodeld in Sources */,
+				B6C4A73225345DA900C77638 /* virtualProgress.swift in Sources */,
 				B61271E72521E3F600FCF9D4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,6 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65AD6DG4WC;
 				INFOPLIST_FILE = TrackYourRun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -464,6 +473,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65AD6DG4WC;
 				INFOPLIST_FILE = TrackYourRun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

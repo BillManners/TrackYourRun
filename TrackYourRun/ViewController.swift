@@ -63,8 +63,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let lastLocation = locations.last{
             (currentPace,averagePace,totalDistance) = speedAndDistance.locationUpdate(location: lastLocation)
+            print(lastLocation)
         }
-        print("yeah")
+        
     }
     
 
@@ -91,9 +92,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         timeCountDisplay = timeCountHours+timeCountMinutes+timeCountSeconds
         timerCountLabel.text = timeCountDisplay
-        averageSpeedLabel.text = String(averagePace)
-        distanceTravelledLabel.text = String(totalDistance)
-        currentSpeedLabel.text = String(currentPace)
+        averageSpeedLabel.text = "Average speed: "+String(averagePace)+"m/s"
+        distanceTravelledLabel.text = "Distance: "+String(totalDistance)+"km"
+        currentSpeedLabel.text = "Current speed: "+String(currentPace)+"m/s"
+
         timeCount+=1
         
         
