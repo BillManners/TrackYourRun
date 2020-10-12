@@ -9,8 +9,11 @@
 import UIKit
 import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate {
-    @IBOutlet var timerCount: UILabel!
-    @IBOutlet var currentLocation: UILabel!
+    @IBOutlet var timerCountLabel: UILabel!
+    @IBOutlet var currentLocationLabel: UILabel!
+    @IBOutlet var distanceTravelledLabel: UILabel!
+    @IBOutlet var currentSpeedLabel: UILabel!
+    @IBOutlet var averageSpeedLabel: UILabel!
     var timeCount = 0
     var terminateTimer = false
     var locationTimer: Timer?
@@ -34,7 +37,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestAlwaysAuthorization()
         speechTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(masterLoop), userInfo: nil, repeats: true)
         locationTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(masterLoop), userInfo: nil, repeats: true)
-        
+        locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
     }
@@ -44,21 +47,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func RunStopButton() {
         if TimerPaused{
             TimerPaused = false
+            locationManager.startUpdatingLocation()
         } else {
             TimerPaused = true
+            locationManager.stopUpdatingLocation()
         }
 
         
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        
+        print("lmao")
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let lastLocation = locations.last{
             (currentPace,averagePace,totalDistance) = speedAndDistance.locationUpdate(location: lastLocation)
         }
+        print("yeah")
     }
     
 
@@ -84,9 +90,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             timeCountSeconds = "0" + timeCountSeconds
         }
         timeCountDisplay = timeCountHours+timeCountMinutes+timeCountSeconds
-        timerCount.text = timeCountDisplay
+        timerCountLabel.text = timeCountDisplay
+        averageSpeedLabel.text = String(averagePace)
+        distanceTravelledLabel.text = String(totalDistance)
+        currentSpeedLabel.text = String(currentPace)
         timeCount+=1
-        locationManager.requestLocation()
+        
         
         
     }

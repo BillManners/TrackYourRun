@@ -53,6 +53,8 @@
 		B61272092521E3F900FCF9D4 /* TrackYourRunUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackYourRunUITests.swift; sourceTree = "<group>"; };
 		B612720B2521E3F900FCF9D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B65A00E3252877F000E08916 /* speedDistanceTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speedDistanceTracking.swift; sourceTree = "<group>"; };
+		B6EF2F5B2533DC8E00BDBA56 /* Afternoon_run_.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Afternoon_run_.gpx; path = ../../Downloads/Afternoon_run_.gpx; sourceTree = "<group>"; };
+		B6EF2F5C2533E30000BDBA56 /* run.gpx */ = {isa = PBXFileReference; lastKnownFileType = file; name = run.gpx; path = ../../Documents/run.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,8 @@
 		B61271D82521E3F600FCF9D4 = {
 			isa = PBXGroup;
 			children = (
+				B6EF2F5C2533E30000BDBA56 /* run.gpx */,
+				B6EF2F5B2533DC8E00BDBA56 /* Afternoon_run_.gpx */,
 				B61271E32521E3F600FCF9D4 /* TrackYourRun */,
 				B61271FD2521E3F900FCF9D4 /* TrackYourRunTests */,
 				B61272082521E3F900FCF9D4 /* TrackYourRunUITests */,

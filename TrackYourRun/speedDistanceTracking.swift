@@ -13,28 +13,35 @@ class speedDistanceTracking{
     var distance = 0
     var averageSpeed: Double
     var previousLocations = [CLLocation]()
+    var previousLocationTimes = [Date]()
     var previousDifferences = [Double]()
+    let startTime: Date
     
     init(){
         distance = 0
         averageSpeed = 0
         previousLocations = []
+        previousLocationTimes = []
         previousDifferences = [0]
-        
+        startTime = Date.init()
     }
     
     func locationUpdate(location: CLLocation)->(Double,Double,Double){
         let location1: CLLocation
         let currentAverage: Double
+        let currentTime = Date.init()
+        let runTime = currentTime.timeIntervalSince(startTime)
+        let timeSinceLastPoint = currentTime.timeIntervalSince(previousLocationTimes.last ?? currentTime)
         if previousLocations.count > 0{
             location1 = previousLocations.last!
         } else {
             location1 = location
         }
         previousLocations.append(location)
+        previousLocationTimes.append(currentTime)
         let location2 = previousLocations.last
         let distanceSinceLastPoint = location1.distance(from: location2!)
-        averageSpeed = (Double(previousDifferences.count)*averageSpeed+distanceSinceLastPoint)/(Double(previousDifferences.count)+1)
+        averageSpeed = ((runTime-timeSinceLastPoint)*averageSpeed+distanceSinceLastPoint)/(runTime)
         previousDifferences.append(distanceSinceLastPoint)
         var currentAverageTotal = 0.00
         if previousDifferences.count >= 5{
@@ -42,11 +49,13 @@ class speedDistanceTracking{
                 currentAverageTotal += previousDifferences[previousDifferences.endIndex-i]
             
             }
-            currentAverage = currentAverageTotal/5
+            let timeCurrentAverageIsGoingFor = currentTime.timeIntervalSince(previousLocationTimes[previousLocationTimes.endIndex-5])
+            currentAverage = currentAverageTotal/timeCurrentAverageIsGoingFor
         } else {
             currentAverage = averageSpeed
         }
         let totalDistance = previousDifferences.reduce(0, +)
+
         return (currentAverage, averageSpeed,totalDistance)
     }
     

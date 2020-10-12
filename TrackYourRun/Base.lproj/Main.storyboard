@@ -45,7 +45,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vw6-XU-Izs">
-                                <rect key="frame" x="167" y="670" width="110" height="21"/>
+                                <rect key="frame" x="137" y="624" width="110" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance travelled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XR6-Z7-oXZ">
+                                <rect key="frame" x="124" y="681" width="161" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -56,8 +63,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="currentLocation" destination="9G8-mE-3Gb" id="TpT-4i-cxA"/>
-                        <outlet property="timerCount" destination="lb5-pI-dBb" id="vcW-JC-FaM"/>
+                        <outlet property="averageSpeedLabel" destination="hNf-jp-F3m" id="XwZ-uZ-vTq"/>
+                        <outlet property="currentLocationLabel" destination="9G8-mE-3Gb" id="fS7-B9-KkM"/>
+                        <outlet property="currentSpeedLabel" destination="vw6-XU-Izs" id="8eW-y6-Odp"/>
+                        <outlet property="distanceTravelledLabel" destination="XR6-Z7-oXZ" id="OSJ-TY-bLX"/>
+                        <outlet property="timerCountLabel" destination="lb5-pI-dBb" id="bkj-Y0-xCS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
