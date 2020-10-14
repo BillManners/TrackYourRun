@@ -20,9 +20,7 @@ class virtualProgress{
         currentTime = Date.init()
     }
     
-    func timePass{
-        let timePassed = currentTime.tims
-    }
+    
     
     func checkForSegmentChange(){
         
