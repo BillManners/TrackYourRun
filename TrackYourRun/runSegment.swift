@@ -9,18 +9,19 @@
 import Foundation
 
 class runSegment{
-    let length: Int
+    let length: Double
     let speed: Double
-    let time: Int
-    init(segLength: Int, segSpeed: Double, segTime: Int) {
-        if Double(segLength)/Double(segTime) == segSpeed{
-            length = segLength
-            speed = segSpeed
-            time = segTime
+    let time: Double
+    init(segLength: Double, segSpeed: Double, segTime: Double) {
+        if segLength/segTime == segSpeed{
+            length = segLength //unit metres
+            speed = segSpeed //unit metres/second
+            time = segTime //unit seconds
         } else {
             length = segLength
             time = segTime
-            speed = Double(segLength)/Double(segTime)
+            speed = segLength/segTime
         }
     }
+    
 }

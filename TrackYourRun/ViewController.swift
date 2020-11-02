@@ -78,6 +78,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if TimerPaused{
             return
         }
+        timerCount()
+        timerCountLabel.text = timeCountDisplay
+        averageSpeedLabel.text = "Average speed: "+String(averagePace)+"m/s"
+        distanceTravelledLabel.text = "Distance: "+String(totalDistance)+"km"
+        currentSpeedLabel.text = "Current speed: "+String(currentPace)+"m/s"
+
+        
+        
+        
+    }
+    
+    func timerCount(){
         timeCountHours = String(timeCount/3600) + ":"
         timeCountMinutes = String((timeCount%3600)/60) + ":"
         timeCountSeconds = String(timeCount%60)
@@ -91,16 +103,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             timeCountSeconds = "0" + timeCountSeconds
         }
         timeCountDisplay = timeCountHours+timeCountMinutes+timeCountSeconds
-        timerCountLabel.text = timeCountDisplay
-        averageSpeedLabel.text = "Average speed: "+String(averagePace)+"m/s"
-        distanceTravelledLabel.text = "Distance: "+String(totalDistance)+"km"
-        currentSpeedLabel.text = "Current speed: "+String(currentPace)+"m/s"
-
         timeCount+=1
-        
-        
-        
+
     }
+    
+    
 
 
 }

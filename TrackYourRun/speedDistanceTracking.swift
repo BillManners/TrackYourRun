@@ -59,4 +59,12 @@ class speedDistanceTracking{
         return (currentAverage, averageSpeed,totalDistance)
     }
     
+    func calculateAverageSpeed(runTime:Int,distanceSinceLastPoint:Double,currentTime:Date) -> (Double){
+        let timeSinceLastPoint = currentTime.timeIntervalSince(previousLocationTimes.last ?? currentTime)
+
+        let totalDistance = ((Double(runTime)-timeSinceLastPoint)*averageSpeed+distanceSinceLastPoint)
+        let newAverageSpeed=totalDistance/Double(runTime)
+
+        return newAverageSpeed
+    }
 }
