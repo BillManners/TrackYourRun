@@ -30,10 +30,11 @@ class virtualProgress{
     }
     
     func checkForSegmentChange(){
-        let thirtySecondsDistance = currentSegment.speed * 30
+        let thirtySecondsDistance = currentSegment.speed* 30
         var changeDirection = "hi"
+        var announcement = "oops"
         if unstartedSegments.count == 0{
-            //do nothing
+            announcement = ("Run will end in 30 seconds.")
         } else {
             if segmentDistance + thirtySecondsDistance >= currentSegment.length && thirtySecondsAnnounced == false{
                 let currentPace = String( format: "%.1f", currentSegment.speed)
@@ -44,19 +45,20 @@ class virtualProgress{
                     changeDirection = "up"
                 }
                 
-                let announcement = ("New segment begins in 30 seconds at ", newPace, "metres per second, ",changeDirection," from ", currentPace)
+                announcement = ("New segment begins in 30 seconds at " + newPace + "metres per second, " + changeDirection + " from " + currentPace)
                 //announce new segment in 30 secs at pace xxx (up/down from yyy)
             }
         }
         if segmentDistance >= currentSegment.length{
             completedSegments.append(currentSegment)
             if unstartedSegments.count == 0{
+                announcement = "Run has finished"
                 //finish run
             } else {
                 currentSegment = unstartedSegments.popLast()!
                 thirtySecondsAnnounced = false
                 //announce new segment at pace xxx (up/down from yyy)
             }
-            }
+        }
     }
 }
