@@ -30,9 +30,9 @@ class virtualProgress{
     }
     
     func checkForSegmentChange(){
-        let thirtySecondsDistance = currentSegment.speed* 30
+        let thirtySecondsDistance = currentSegment.speed*30
         var changeDirection = "hi"
-        var announcement = "oops"
+        var announcement: String
         if unstartedSegments.count == 0{
             announcement = ("Run will end in 30 seconds.")
         } else {
