@@ -12,12 +12,7 @@ class runSegment{
     let length: Double
     let speed: Double
     let time: Double
-    init(segLength: Double, segSpeed: Double, segTime: Double) {
-        if segLength/segTime == segSpeed{
-            length = segLength //unit metres
-            speed = segSpeed //unit metres/second
-            time = segTime //unit seconds
-        } else {
+    init(segLength: Double, segSpeed: Double) {
             length = segLength
             time = segTime
             speed = segLength/segTime
