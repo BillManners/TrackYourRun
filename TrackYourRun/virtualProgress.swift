@@ -14,6 +14,7 @@ class virtualProgress{
     var unstartedSegments: [runSegment]
     var completedSegments: [runSegment]
     let startTime: Date
+    let speechSynthesiser = SpeechSynthesiser()
     var thirtySecondsAnnounced = false
     init(runSegments: [runSegment]) {
         unstartedSegments = runSegments
@@ -31,11 +32,9 @@ class virtualProgress{
     
     func checkForSegmentChange(){
         let thirtySecondsDistance = currentSegment.speed*30
-        var changeDirection = "hi"
-        var announcement: String
-        if unstartedSegments.count == 0{
-            announcement = ("Run will end in 30 seconds.")
-        } else {
+        var changeDirection = "An error has occurred"
+        var announcement = "Run will end in 30 seconds"
+        if unstartedSegments.count > 0 {
             if segmentDistance + thirtySecondsDistance >= currentSegment.length && thirtySecondsAnnounced == false{
                 let currentPace = String( format: "%.1f", currentSegment.speed)
                 let newPace = String( format: "%.1f", unstartedSegments.last!.speed)
@@ -60,5 +59,6 @@ class virtualProgress{
                 //announce new segment at pace xxx (up/down from yyy)
             }
         }
+        speechSynthesiser.Speak(textToSpeak: announcement)
     }
 }
