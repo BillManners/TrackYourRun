@@ -20,6 +20,7 @@
 		B65A00E4252877F000E08916 /* speedDistanceTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A00E3252877F000E08916 /* speedDistanceTracking.swift */; };
 		B6C4A73225345DA900C77638 /* virtualProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C4A73125345DA900C77638 /* virtualProgress.swift */; };
 		B6C4A73425345EAF00C77638 /* runSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C4A73325345EAF00C77638 /* runSegment.swift */; };
+		B6E1347525725BF60025D753 /* CreateNewRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E1347425725BF60025D753 /* CreateNewRunViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		B65A00E3252877F000E08916 /* speedDistanceTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speedDistanceTracking.swift; sourceTree = "<group>"; };
 		B6C4A73125345DA900C77638 /* virtualProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = virtualProgress.swift; sourceTree = "<group>"; };
 		B6C4A73325345EAF00C77638 /* runSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = runSegment.swift; sourceTree = "<group>"; };
+		B6E1347425725BF60025D753 /* CreateNewRunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewRunViewController.swift; sourceTree = "<group>"; };
 		B6EF2F5B2533DC8E00BDBA56 /* Afternoon_run_.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Afternoon_run_.gpx; path = ../../Downloads/Afternoon_run_.gpx; sourceTree = "<group>"; };
 		B6EF2F5C2533E30000BDBA56 /* run.gpx */ = {isa = PBXFileReference; lastKnownFileType = file; name = run.gpx; path = ../../Documents/run.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 				B61271E42521E3F600FCF9D4 /* AppDelegate.swift */,
 				B61271E62521E3F600FCF9D4 /* SceneDelegate.swift */,
 				B61271E82521E3F600FCF9D4 /* ViewController.swift */,
+				B6E1347425725BF60025D753 /* CreateNewRunViewController.swift */,
 				B61271EA2521E3F600FCF9D4 /* Main.storyboard */,
 				B61271F02521E3F900FCF9D4 /* Assets.xcassets */,
 				B61271F22521E3F900FCF9D4 /* LaunchScreen.storyboard */,
@@ -283,6 +286,7 @@
 				B6C4A73425345EAF00C77638 /* runSegment.swift in Sources */,
 				B60B138D2556A8F8001864DB /* SpeechSynthesiser.swift in Sources */,
 				B61271E52521E3F600FCF9D4 /* AppDelegate.swift in Sources */,
+				B6E1347525725BF60025D753 /* CreateNewRunViewController.swift in Sources */,
 				B61271EF2521E3F600FCF9D4 /* TrackYourRun.xcdatamodeld in Sources */,
 				B6C4A73225345DA900C77638 /* virtualProgress.swift in Sources */,
 				B61271E72521E3F600FCF9D4 /* SceneDelegate.swift in Sources */,

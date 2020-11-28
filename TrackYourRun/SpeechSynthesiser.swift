@@ -17,7 +17,7 @@ class SpeechSynthesiser {
         
          
             speechUtterance.rate = 0.5
-        speechUtterance.pitchMultiplier = 0.9
+            speechUtterance.pitchMultiplier = 0.9
             speechUtterance.volume = 1
             speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-za")
          
