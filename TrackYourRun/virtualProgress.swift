@@ -32,19 +32,12 @@ class virtualProgress{
     
     func checkForSegmentChange(){
         let thirtySecondsDistance = currentSegment.speed*30
-        var changeDirection = "An error has occurred"
         var announcement = "Run will end in 30 seconds"
+
         if unstartedSegments.count > 0 {
             if segmentDistance + thirtySecondsDistance >= currentSegment.length && thirtySecondsAnnounced == false{
-                let currentPace = String( format: "%.1f", currentSegment.speed)
-                let newPace = String( format: "%.1f", unstartedSegments.last!.speed)
-                if currentSegment.speed > unstartedSegments.last!.speed{
-                    changeDirection = "down"
-                } else {
-                    changeDirection = "up"
-                }
-                
-                announcement = ("New segment begins in 30 seconds at " + newPace + "metres per second, " + changeDirection + " from " + currentPace)
+                announcement = segmentChangeVoiceMessages(endOfSegment: false)
+                thirtySecondsAnnounced = true
                 //announce new segment in 30 secs at pace xxx (up/down from yyy)
             }
         }
@@ -56,9 +49,27 @@ class virtualProgress{
             } else {
                 currentSegment = unstartedSegments.popLast()!
                 thirtySecondsAnnounced = false
-                //announce new segment at pace xxx (up/down from yyy)
+                segmentChangeVoiceMessages(endOfSegment: true)
             }
         }
         speechSynthesiser.Speak(textToSpeak: announcement)
+    }
+    
+    func segmentChangeVoiceMessages (endOfSegment: Bool){
+        var changeDirection = "An error has occurred"
+        var announcement = "An error has occurred"
+        let currentPace = String( format: "%.1f", currentSegment.speed)
+        let newPace = String( format: "%.1f", unstartedSegments.last!.speed)
+        if currentSegment.speed > unstartedSegments.last!.speed{
+            changeDirection = "down"
+        } else {
+            changeDirection = "up"
+        }
+        if endOfSegment {
+            announcement = ("New segment is starting now at " + newPace + "metres per second, " + changeDirection + " from " + currentPace)
+        } else {
+            announcement = ("New segment begins in 30 seconds at " + newPace + "metres per second, " + changeDirection + " from " + currentPace)
+        }
+        return (announcement)
     }
 }
