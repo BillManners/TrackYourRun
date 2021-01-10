@@ -28,19 +28,25 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
     var currentPace: Double = 0
     var totalDistance: Double = 0
     var distanceSinceLastPoint: CLLocationDistance?
+    var myVirtualProgress: virtualProgress?
     let locationManager = CLLocationManager()
     let speedAndDistance = speedDistanceTracking()
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         locationManager.requestAlwaysAuthorization()
+        //myVirtualProgress = RunSetupViewController.sendmyVirtualProgress()
         speechTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(masterLoop), userInfo: nil, repeats: true)
         locationTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(masterLoop), userInfo: nil, repeats: true)
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
+        myVirtualProgress = theVirtualProgress
+        
     }
     
     
@@ -56,6 +62,7 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
 
         
     }
+    
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("location manager did fail with error (expected while not simulating location)")

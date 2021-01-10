@@ -7,6 +7,7 @@
 //
 
 import UIKit
+var theVirtualProgress = virtualProgress()
 
 class RunSetupViewController: UIViewController {
 
@@ -45,9 +46,10 @@ class RunSetupViewController: UIViewController {
         desiredDistance.text = ""
         desiredSpeed.text = ""
         desiredTime.text = ""
-        
+
         myVirtualProgress.addNewSegment(segment: newSegment)
     }
+    
     
     @IBAction func infoButton(_ sender: Any) {
         let alertController = UIAlertController(title: "Help", message:
@@ -57,8 +59,8 @@ class RunSetupViewController: UIViewController {
     
     @IBAction func startRunButton(_ sender: Any) {
         saveSegment()
+        theVirtualProgress = myVirtualProgress
     }
-    
     @IBAction func newSegmentButton(_ sender: Any) {
         saveSegment()
     }

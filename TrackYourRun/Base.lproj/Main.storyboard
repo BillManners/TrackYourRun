@@ -37,7 +37,7 @@
                                             <state key="normal" title="Start Run"/>
                                             <connections>
                                                 <action selector="startRunButton:" destination="pmN-Nx-zHx" eventType="touchUpInside" id="bfj-f4-TUe"/>
-                                                <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="pVc-j3-Tgc"/>
+                                                <segue destination="BYZ-38-t0r" kind="presentation" destinationCreationSelector="loadRunView:" modalPresentationStyle="fullScreen" id="pVc-j3-Tgc"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
@@ -204,10 +204,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tjm-DU-0nd">
-                                <rect key="frame" x="160" y="733" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tjm-DU-0nd">
+                                <rect key="frame" x="108" y="780" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" image="map" catalog="system"/>
                                 <connections>
                                     <segue destination="4Gw-1K-T2c" kind="show" id="fn4-dz-B8x"/>
                                 </connections>
@@ -254,6 +254,7 @@
     </scenes>
     <resources>
         <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="map" catalog="system" width="128" height="110"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

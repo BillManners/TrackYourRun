@@ -23,6 +23,7 @@ class virtualProgress{
         segmentDistance = 0
         currentSegment = runSegment(segLength: 0.001, segTime: 0.001)
         //TODO find an alternate solution to startTime = Date.init()
+        //Why does it even need that?
     }
     
     func addNewSegment(segment: runSegment){
@@ -63,7 +64,15 @@ class virtualProgress{
     func segmentChangeVoiceMessages(endOfSegment: Bool)->String {
         var changeDirection = "An error has occurred"
         var announcement = "An error has occurred"
-        let currentPace = String( format: "%.1f", currentSegment.speed)
+        let currentPace = String( format: "%.1f", currentSegment.speed
+        
+        
+        
+        
+        
+        
+        
+        )
         let newPace = String( format: "%.1f", unstartedSegments.last!.speed)
         if currentSegment.speed > unstartedSegments.last!.speed{
             changeDirection = "down"
