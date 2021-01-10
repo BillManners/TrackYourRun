@@ -16,12 +16,17 @@ class virtualProgress{
     let startTime: Date
     let speechSynthesiser = SpeechSynthesiser()
     var thirtySecondsAnnounced = false
-    init(runSegments: [runSegment]) {
-        unstartedSegments = runSegments
+    init() {
+        unstartedSegments = []
         completedSegments = []
-        currentSegment = unstartedSegments.popLast()!
         startTime = Date.init()
         segmentDistance = 0
+        currentSegment = runSegment(segLength: 0.001, segTime: 0.001)
+        //TODO find an alternate solution to startTime = Date.init()
+    }
+    
+    func addNewSegment(segment: runSegment){
+        unstartedSegments.insert(segment, at: 0)
     }
     
     func moveForward(timeChange:Double){
@@ -49,13 +54,13 @@ class virtualProgress{
             } else {
                 currentSegment = unstartedSegments.popLast()!
                 thirtySecondsAnnounced = false
-                segmentChangeVoiceMessages(endOfSegment: true)
+                announcement = segmentChangeVoiceMessages(endOfSegment: true)
             }
         }
         speechSynthesiser.Speak(textToSpeak: announcement)
     }
     
-    func segmentChangeVoiceMessages (endOfSegment: Bool){
+    func segmentChangeVoiceMessages(endOfSegment: Bool)->String {
         var changeDirection = "An error has occurred"
         var announcement = "An error has occurred"
         let currentPace = String( format: "%.1f", currentSegment.speed)

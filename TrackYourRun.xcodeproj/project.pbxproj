@@ -10,17 +10,19 @@
 		B60B138D2556A8F8001864DB /* SpeechSynthesiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B138C2556A8F8001864DB /* SpeechSynthesiser.swift */; };
 		B61271E52521E3F600FCF9D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61271E42521E3F600FCF9D4 /* AppDelegate.swift */; };
 		B61271E72521E3F600FCF9D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61271E62521E3F600FCF9D4 /* SceneDelegate.swift */; };
-		B61271E92521E3F600FCF9D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61271E82521E3F600FCF9D4 /* ViewController.swift */; };
+		B61271E92521E3F600FCF9D4 /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61271E82521E3F600FCF9D4 /* RunViewController.swift */; };
 		B61271EC2521E3F600FCF9D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B61271EA2521E3F600FCF9D4 /* Main.storyboard */; };
 		B61271EF2521E3F600FCF9D4 /* TrackYourRun.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B61271ED2521E3F600FCF9D4 /* TrackYourRun.xcdatamodeld */; };
 		B61271F12521E3F900FCF9D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B61271F02521E3F900FCF9D4 /* Assets.xcassets */; };
 		B61271F42521E3F900FCF9D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B61271F22521E3F900FCF9D4 /* LaunchScreen.storyboard */; };
 		B61271FF2521E3F900FCF9D4 /* TrackYourRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61271FE2521E3F900FCF9D4 /* TrackYourRunTests.swift */; };
 		B612720A2521E3F900FCF9D4 /* TrackYourRunUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61272092521E3F900FCF9D4 /* TrackYourRunUITests.swift */; };
+		B62D745325AB4720008C9B0F /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D745225AB4720008C9B0F /* Functions.swift */; };
+		B62FA57D25A73F4E0087958B /* RunSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62FA57C25A73F4E0087958B /* RunSetupViewController.swift */; };
+		B62FA58225A73F600087958B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62FA58125A73F600087958B /* MapViewController.swift */; };
 		B65A00E4252877F000E08916 /* speedDistanceTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A00E3252877F000E08916 /* speedDistanceTracking.swift */; };
 		B6C4A73225345DA900C77638 /* virtualProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C4A73125345DA900C77638 /* virtualProgress.swift */; };
 		B6C4A73425345EAF00C77638 /* runSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C4A73325345EAF00C77638 /* runSegment.swift */; };
-		B6E1347525725BF60025D753 /* CreateNewRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E1347425725BF60025D753 /* CreateNewRunViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +47,7 @@
 		B61271E12521E3F600FCF9D4 /* TrackYourRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackYourRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B61271E42521E3F600FCF9D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B61271E62521E3F600FCF9D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B61271E82521E3F600FCF9D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B61271E82521E3F600FCF9D4 /* RunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
 		B61271EB2521E3F600FCF9D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B61271EE2521E3F600FCF9D4 /* TrackYourRun.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrackYourRun.xcdatamodel; sourceTree = "<group>"; };
 		B61271F02521E3F900FCF9D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,10 +59,12 @@
 		B61272052521E3F900FCF9D4 /* TrackYourRunUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackYourRunUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B61272092521E3F900FCF9D4 /* TrackYourRunUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackYourRunUITests.swift; sourceTree = "<group>"; };
 		B612720B2521E3F900FCF9D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B62D745225AB4720008C9B0F /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		B62FA57C25A73F4E0087958B /* RunSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunSetupViewController.swift; sourceTree = "<group>"; };
+		B62FA58125A73F600087958B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B65A00E3252877F000E08916 /* speedDistanceTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speedDistanceTracking.swift; sourceTree = "<group>"; };
 		B6C4A73125345DA900C77638 /* virtualProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = virtualProgress.swift; sourceTree = "<group>"; };
 		B6C4A73325345EAF00C77638 /* runSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = runSegment.swift; sourceTree = "<group>"; };
-		B6E1347425725BF60025D753 /* CreateNewRunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewRunViewController.swift; sourceTree = "<group>"; };
 		B6EF2F5B2533DC8E00BDBA56 /* Afternoon_run_.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Afternoon_run_.gpx; path = ../../Downloads/Afternoon_run_.gpx; sourceTree = "<group>"; };
 		B6EF2F5C2533E30000BDBA56 /* run.gpx */ = {isa = PBXFileReference; lastKnownFileType = file; name = run.gpx; path = ../../Documents/run.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,8 +121,9 @@
 			children = (
 				B61271E42521E3F600FCF9D4 /* AppDelegate.swift */,
 				B61271E62521E3F600FCF9D4 /* SceneDelegate.swift */,
-				B61271E82521E3F600FCF9D4 /* ViewController.swift */,
-				B6E1347425725BF60025D753 /* CreateNewRunViewController.swift */,
+				B61271E82521E3F600FCF9D4 /* RunViewController.swift */,
+				B62FA57C25A73F4E0087958B /* RunSetupViewController.swift */,
+				B62FA58125A73F600087958B /* MapViewController.swift */,
 				B61271EA2521E3F600FCF9D4 /* Main.storyboard */,
 				B61271F02521E3F900FCF9D4 /* Assets.xcassets */,
 				B61271F22521E3F900FCF9D4 /* LaunchScreen.storyboard */,
@@ -128,6 +133,7 @@
 				B6C4A73125345DA900C77638 /* virtualProgress.swift */,
 				B6C4A73325345EAF00C77638 /* runSegment.swift */,
 				B60B138C2556A8F8001864DB /* SpeechSynthesiser.swift */,
+				B62D745225AB4720008C9B0F /* Functions.swift */,
 			);
 			path = TrackYourRun;
 			sourceTree = "<group>";
@@ -281,12 +287,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B61271E92521E3F600FCF9D4 /* ViewController.swift in Sources */,
+				B61271E92521E3F600FCF9D4 /* RunViewController.swift in Sources */,
 				B65A00E4252877F000E08916 /* speedDistanceTracking.swift in Sources */,
 				B6C4A73425345EAF00C77638 /* runSegment.swift in Sources */,
+				B62FA58225A73F600087958B /* MapViewController.swift in Sources */,
 				B60B138D2556A8F8001864DB /* SpeechSynthesiser.swift in Sources */,
 				B61271E52521E3F600FCF9D4 /* AppDelegate.swift in Sources */,
-				B6E1347525725BF60025D753 /* CreateNewRunViewController.swift in Sources */,
+				B62FA57D25A73F4E0087958B /* RunSetupViewController.swift in Sources */,
+				B62D745325AB4720008C9B0F /* Functions.swift in Sources */,
 				B61271EF2521E3F600FCF9D4 /* TrackYourRun.xcdatamodeld in Sources */,
 				B6C4A73225345DA900C77638 /* virtualProgress.swift in Sources */,
 				B61271E72521E3F600FCF9D4 /* SceneDelegate.swift in Sources */,

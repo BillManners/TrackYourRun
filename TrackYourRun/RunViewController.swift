@@ -8,10 +8,11 @@
 
 import UIKit
 import CoreLocation
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class RunViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var timerCountLabel: UILabel!
     @IBOutlet var currentLocationLabel: UILabel!
-    @IBOutlet var distanceTravelledLabel: UILabel!
+    @IBOutlet var
+        distanceTravelledLabel: UILabel!
     @IBOutlet var currentSpeedLabel: UILabel!
     @IBOutlet var averageSpeedLabel: UILabel!
     var timeCount = 0
@@ -57,7 +58,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("lmao")
+        print("location manager did fail with error (expected while not simulating location)")
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -83,6 +84,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         averageSpeedLabel.text = "Average speed: "+String(averagePace)+"m/s"
         distanceTravelledLabel.text = "Distance: "+String(totalDistance)+"km"
         currentSpeedLabel.text = "Current speed: "+String(currentPace)+"m/s"
+        print("penis"+String(timeCount))
 
         
         
