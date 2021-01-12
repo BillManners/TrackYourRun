@@ -38,7 +38,7 @@ class virtualProgress{
     
     func checkForSegmentChange(){
         let thirtySecondsDistance = currentSegment.speed*30
-        var announcement = "Run will end in 30 seconds"
+        var announcement = ""
 
         if unstartedSegments.count > 0 {
             if segmentDistance + thirtySecondsDistance >= currentSegment.length && thirtySecondsAnnounced == false{
@@ -46,33 +46,32 @@ class virtualProgress{
                 thirtySecondsAnnounced = true
                 //announce new segment in 30 secs at pace xxx (up/down from yyy)
             }
+        } else if segmentDistance + thirtySecondsDistance >= currentSegment.length && thirtySecondsAnnounced == false{
+            announcement = "Run will end in 30 seconds"
+            thirtySecondsAnnounced = true
         }
         if segmentDistance >= currentSegment.length{
             completedSegments.append(currentSegment)
             if unstartedSegments.count == 0{
-                announcement = "Run has finished"
+                announcement = "Run has ended."
                 //finish run
             } else {
-                currentSegment = unstartedSegments.popLast()!
+
                 thirtySecondsAnnounced = false
                 announcement = segmentChangeVoiceMessages(endOfSegment: true)
+                currentSegment = unstartedSegments.popLast()!
             }
         }
-        speechSynthesiser.Speak(textToSpeak: announcement)
+        if announcement != ""{
+            speechSynthesiser.Speak(textToSpeak: announcement)
+        }
+
     }
     
     func segmentChangeVoiceMessages(endOfSegment: Bool)->String {
         var changeDirection = "An error has occurred"
         var announcement = "An error has occurred"
-        let currentPace = String( format: "%.1f", currentSegment.speed
-        
-        
-        
-        
-        
-        
-        
-        )
+        let currentPace = String( format: "%.1f", currentSegment.speed)
         let newPace = String( format: "%.1f", unstartedSegments.last!.speed)
         if currentSegment.speed > unstartedSegments.last!.speed{
             changeDirection = "down"

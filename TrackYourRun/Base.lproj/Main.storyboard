@@ -37,7 +37,7 @@
                                             <state key="normal" title="Start Run"/>
                                             <connections>
                                                 <action selector="startRunButton:" destination="pmN-Nx-zHx" eventType="touchUpInside" id="bfj-f4-TUe"/>
-                                                <segue destination="BYZ-38-t0r" kind="presentation" destinationCreationSelector="loadRunView:" modalPresentationStyle="fullScreen" id="pVc-j3-Tgc"/>
+                                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="startRunSegue" modalPresentationStyle="fullScreen" id="VYM-8D-nn0"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>

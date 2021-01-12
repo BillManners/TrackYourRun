@@ -8,7 +8,9 @@
 
 import UIKit
 import CoreLocation
-class RunViewController: UIViewController, CLLocationManagerDelegate {
+class RunViewController: UIViewController, CLLocationManagerDelegate{
+ 
+
     @IBOutlet var timerCountLabel: UILabel!
     @IBOutlet var currentLocationLabel: UILabel!
     @IBOutlet var
@@ -33,6 +35,15 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
     let speedAndDistance = speedDistanceTracking()
 
     
+    init(VirtualProgress: virtualProgress) {
+        myVirtualProgress = VirtualProgress
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +56,6 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
-        myVirtualProgress = theVirtualProgress
         
     }
     
@@ -62,6 +72,8 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
 
         
     }
+    
+
     
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -87,6 +99,7 @@ class RunViewController: UIViewController, CLLocationManagerDelegate {
             return
         }
         timerCount()
+        myVirtualProgress?.moveForward(timeChange: 1)
         timerCountLabel.text = timeCountDisplay
         averageSpeedLabel.text = "Average speed: "+String(averagePace)+"m/s"
         distanceTravelledLabel.text = "Distance: "+String(totalDistance)+"km"

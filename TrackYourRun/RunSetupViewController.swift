@@ -7,9 +7,12 @@
 //
 
 import UIKit
-var theVirtualProgress = virtualProgress()
+
+
 
 class RunSetupViewController: UIViewController {
+
+    
 
     @IBOutlet var desiredDistance: UITextField!
     @IBOutlet var desiredTime: UITextField!
@@ -50,6 +53,12 @@ class RunSetupViewController: UIViewController {
         myVirtualProgress.addNewSegment(segment: newSegment)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let RunViewController = segue.destination as? RunViewController {
+            RunViewController.myVirtualProgress = myVirtualProgress
+        }
+    }
+    
     
     @IBAction func infoButton(_ sender: Any) {
         let alertController = UIAlertController(title: "Help", message:
@@ -58,55 +67,60 @@ class RunSetupViewController: UIViewController {
     }
     
     @IBAction func startRunButton(_ sender: Any) {
-        saveSegment()
-        theVirtualProgress = myVirtualProgress
+        //saveSegment()
+
     }
     @IBAction func newSegmentButton(_ sender: Any) {
+        
         saveSegment()
+        
     }
 
     @IBAction func distanceEditingEnds(_ sender: Any) {
-        if let b = Double(desiredDistance.text!){
+        if var b = Double(desiredDistance.text!){
+            b = b*1000
             desiredDistancenum  = handyFunctions.roundToPrecision(b, toNearest: 0.1)
             if desiredSpeednum != 0{
-                let a = desiredDistancenum/(desiredSpeednum/60)
+                let a = (desiredDistancenum/desiredSpeednum)
                 desiredTimenum  = handyFunctions.roundToPrecision(a, toNearest: 0.1)
-                desiredTime.text = String(desiredTimenum)
+                desiredTime.text = String(desiredTimenum/60)
             } else if desiredTimenum != 0{
-                let a = (desiredDistancenum/desiredTimenum)*60
+                let a = (desiredDistancenum/desiredTimenum)
                 desiredSpeednum = handyFunctions.roundToPrecision(a, toNearest: 0.1)
-                desiredSpeed.text = String(desiredSpeednum)
+                desiredSpeed.text = String(desiredSpeednum*3.6)
                 
             }
         }
     }
     
     @IBAction func timeEditingEnds(_ sender: Any) {
-        if let b = Double(desiredTime.text!){
+        if var b = Double(desiredTime.text!){
+            b=b*60
             desiredTimenum = handyFunctions.roundToPrecision(b, toNearest: 0.1)
             if desiredSpeednum != 0{
-                let a = (desiredSpeednum/60) * desiredTimenum
+                let a = (desiredSpeednum * desiredTimenum)
                 desiredDistancenum = handyFunctions.roundToPrecision(a, toNearest: 0.1)
-                desiredDistance.text = String(desiredDistancenum)
+                desiredDistance.text = String(desiredDistancenum/1000)
             } else if desiredDistancenum != 0{
-                let a = (desiredDistancenum / desiredTimenum)*60
+                let a = (desiredDistancenum / desiredTimenum)
                 desiredSpeednum = handyFunctions.roundToPrecision(a, toNearest: 0.1)
-                desiredSpeed.text = String(desiredSpeednum)
+                desiredSpeed.text = String(desiredSpeednum*3.6)
             }
         }
     }
     
     @IBAction func speedEditingEnds(_ sender: Any) {
-        if let b = Double(desiredSpeed.text!){
+        if var b = Double(desiredSpeed.text!){
+            b=b/3.6
             desiredSpeednum = handyFunctions.roundToPrecision(b, toNearest: 0.1)
             if desiredTimenum != 0{
-                let a = desiredTimenum * (desiredSpeednum/60)
+                let a = (desiredTimenum * desiredSpeednum)
                 desiredDistancenum = handyFunctions.roundToPrecision(a, toNearest: 0.1)
-                desiredDistance.text = String(desiredDistancenum)
+                desiredDistance.text = String(desiredDistancenum/1000)
             } else if desiredDistancenum != 0{
-                let a = desiredDistancenum / (desiredSpeednum/60)
+                let a = (desiredDistancenum / desiredSpeednum)
                 desiredTimenum  = handyFunctions.roundToPrecision(a, toNearest: 0.1)
-                desiredTime.text = String(desiredTimenum)
+                desiredTime.text = String(desiredTimenum/60)
                 
             }
         }

@@ -22,5 +22,6 @@ class SpeechSynthesiser {
             speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-za")
          
         synthesiser.speak(speechUtterance)
+        print(textToSpeak)
     }
 }
