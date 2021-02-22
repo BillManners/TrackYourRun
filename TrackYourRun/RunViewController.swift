@@ -50,7 +50,7 @@ class RunViewController: UIViewController, CLLocationManagerDelegate{
         // Do any additional setup after loading the view.
         locationManager.requestAlwaysAuthorization()
         //myVirtualProgress = RunSetupViewController.sendmyVirtualProgress()
-        speechTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(masterLoop), userInfo: nil, repeats: true)
+        speechTimer = Timer.scheduledTimer(timeInterval: 3000, target: self, selector: #selector(masterLoop), userInfo: nil, repeats: true)
         locationTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(masterLoop), userInfo: nil, repeats: true)
         
         locationManager.delegate = self
@@ -104,7 +104,6 @@ class RunViewController: UIViewController, CLLocationManagerDelegate{
         averageSpeedLabel.text = "Average speed: "+String(averagePace)+"m/s"
         distanceTravelledLabel.text = "Distance: "+String(totalDistance)+"km"
         currentSpeedLabel.text = "Current speed: "+String(currentPace)+"m/s"
-        print("penis"+String(timeCount))
 
         
         
