@@ -62,13 +62,18 @@ class RunSetupViewController: UIViewController {
     
     @IBAction func infoButton(_ sender: Any) {
         let alertController = UIAlertController(title: "Help", message:
-            "This is a Reverse Polish Notation (RPN) calculator. \n Reverse Polish Notation is where arithmetic expressions are written such that the operator comes after the operands. \n E.g: 35*44*- would perform the calculation: (3*5)-(4*4) \n Press enter to begin a new number, press eval to calculate the answer.", preferredStyle: .alert)
+            "Input any two of the following fields and the third will autocomplete. Then press New Segment to add another segment to the run or Start Run if you are ready to go.", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func startRunButton(_ sender: Any) {
         //saveSegment()
 
+    }
+    @IBAction func dismisskeyboard(_ sender: Any) {
+        view.endEditing(true)
     }
     @IBAction func newSegmentButton(_ sender: Any) {
         
@@ -83,11 +88,11 @@ class RunSetupViewController: UIViewController {
             if desiredSpeednum != 0{
                 let a = (desiredDistancenum/desiredSpeednum)
                 desiredTimenum  = handyFunctions.roundToPrecision(a, toNearest: 0.1)
-                desiredTime.text = String(desiredTimenum/60)
+                desiredTime.text = String(handyFunctions.roundToPrecision(desiredTimenum/60, toNearest: 1))
             } else if desiredTimenum != 0{
                 let a = (desiredDistancenum/desiredTimenum)
                 desiredSpeednum = handyFunctions.roundToPrecision(a, toNearest: 0.1)
-                desiredSpeed.text = String(desiredSpeednum*3.6)
+                desiredSpeed.text = String(handyFunctions.roundToPrecision(desiredSpeednum*3.6, toNearest: 1))
                 
             }
         }
@@ -100,11 +105,11 @@ class RunSetupViewController: UIViewController {
             if desiredSpeednum != 0{
                 let a = (desiredSpeednum * desiredTimenum)
                 desiredDistancenum = handyFunctions.roundToPrecision(a, toNearest: 0.1)
-                desiredDistance.text = String(desiredDistancenum/1000)
+                desiredDistance.text = String(handyFunctions.roundToPrecision(desiredDistancenum/1000, toNearest: 1))
             } else if desiredDistancenum != 0{
                 let a = (desiredDistancenum / desiredTimenum)
                 desiredSpeednum = handyFunctions.roundToPrecision(a, toNearest: 0.1)
-                desiredSpeed.text = String(desiredSpeednum*3.6)
+                desiredSpeed.text = String(handyFunctions.roundToPrecision(desiredSpeednum*3.6, toNearest: 1))
             }
         }
     }
@@ -116,11 +121,11 @@ class RunSetupViewController: UIViewController {
             if desiredTimenum != 0{
                 let a = (desiredTimenum * desiredSpeednum)
                 desiredDistancenum = handyFunctions.roundToPrecision(a, toNearest: 0.1)
-                desiredDistance.text = String(desiredDistancenum/1000)
+                desiredDistance.text = String(handyFunctions.roundToPrecision(desiredDistancenum/1000, toNearest: 1))
             } else if desiredDistancenum != 0{
                 let a = (desiredDistancenum / desiredSpeednum)
                 desiredTimenum  = handyFunctions.roundToPrecision(a, toNearest: 0.1)
-                desiredTime.text = String(desiredTimenum/60)
+                desiredTime.text = String(handyFunctions.roundToPrecision(desiredTimenum/60, toNearest: 1))
                 
             }
         }

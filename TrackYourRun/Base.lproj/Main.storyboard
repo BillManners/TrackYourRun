@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pmN-Nx-zHx">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -84,7 +84,7 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance (km)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAR-5M-62i">
-                                <rect key="frame" x="47" y="208" width="106.5" height="21"/>
+                                <rect key="frame" x="47.000000000000007" y="208" width="106.66666666666669" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -96,7 +96,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAH-br-LrP">
-                                <rect key="frame" x="47" y="737.5" width="34" height="33"/>
+                                <rect key="frame" x="47" y="738" width="34" height="32.666666666666629"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="kUo-U2-wFy"/>
                                 </constraints>
@@ -117,6 +117,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6GD-5r-feM">
+                                <rect key="frame" x="39" y="130" width="25" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="keyboard.chevron.compact.down" catalog="system">
+                                    <attributedString key="attributedTitle"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismisskeyboard:" destination="pmN-Nx-zHx" eventType="touchDragInside" id="nRv-2F-IYf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1K0-RR-5MZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -176,13 +186,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9G8-mE-3Gb">
-                                <rect key="frame" x="108" y="424" width="213" height="162"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vw6-XU-Izs">
                                 <rect key="frame" x="56" y="624" width="322" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -205,7 +208,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tjm-DU-0nd">
-                                <rect key="frame" x="108" y="780" width="22" height="22"/>
+                                <rect key="frame" x="56" y="777" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="map" catalog="system"/>
                                 <connections>
@@ -219,7 +222,6 @@
                     <navigationItem key="navigationItem" id="Cv6-3q-nzE"/>
                     <connections>
                         <outlet property="averageSpeedLabel" destination="hNf-jp-F3m" id="XwZ-uZ-vTq"/>
-                        <outlet property="currentLocationLabel" destination="9G8-mE-3Gb" id="fS7-B9-KkM"/>
                         <outlet property="currentSpeedLabel" destination="vw6-XU-Izs" id="8eW-y6-Odp"/>
                         <outlet property="distanceTravelledLabel" destination="XR6-Z7-oXZ" id="OSJ-TY-bLX"/>
                         <outlet property="timerCountLabel" destination="lb5-pI-dBb" id="bkj-Y0-xCS"/>
@@ -254,6 +256,7 @@
     </scenes>
     <resources>
         <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="keyboard.chevron.compact.down" catalog="system" width="128" height="102"/>
         <image name="map" catalog="system" width="128" height="110"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

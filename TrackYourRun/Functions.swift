@@ -10,6 +10,6 @@ import Foundation
 
 struct Functions{
     func roundToPrecision(_ value: Double, toNearest: Double) -> Double {
-        return round(value / toNearest) * toNearest
+            return round(value / toNearest) * toNearest
     }
 }
